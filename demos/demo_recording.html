@@ -28,7 +28,12 @@
             <div id="header">
                 <a href="index.html"><img id="logo_easyrtc" src="images/easyrtc_logo.png" alt="EasyRTC" style="" /></a>
             </div>
-            <div id="menu"><a class="menu_link" href="index.html"><div class="menu_item">Local Demos</div></a><a class="menu_link" href="https://github.com/priologic/easyrtc/tree/master/docs"><div class="menu_item">Documentation</div></a><a class="menu_link" href="https://easyrtc.com/forum/"><div class="menu_item">Support: EasyRTC Forums</div></a><a class="menu_link" href="http://www.easyrtc.com/"><div class="menu_item">EasyRTC.com</div></a></div>
+            <div id="menu">
+                <a class="menu_link" href="index.html"><span class="menu_item">Local Demos</span></a>
+                <a class="menu_link" href="http://www.easyrtc.com/docs/"><span class="menu_item">Documentation</span></a>
+                <a class="menu_link" href="https://github.com/priologic/easyrtc/issues"><span class="menu_item">Github Support</span></a>
+                <a class="menu_link" href="http://www.easyrtc.com/"><span class="menu_item">Easyrtc.com</span></a>
+            </div>
             <div id="main">
                 <!-- Main Content -->
                 <h1>EasyRTC Demo: Simple Video+Audio</h1>
@@ -58,13 +63,13 @@
                     </div>
                     <div id="recordButtons">
                         <label for="useVP8">
-                            <input type="radio" onclick="easyrtc.setRecordingVideoCodec('vp8');" checked="checked" id="useVP8" name="codecUsed"> VP8 
+                            <input type="radio" onclick="easyrtc.setRecordingVideoCodec('vp8');" checked="checked" id="useVP8" name="codecUsed" disabled="disabled" > VP8 
                         </label>
                         <label for="codecUsed">
-                            <input type="radio" onclick="easyrtc.setRecordingVideoCodec('vp9');" id="useVP9" name="codecUsed"> VP9
+                            <input type="radio" onclick="easyrtc.setRecordingVideoCodec('vp9');" id="useVP9" name="codecUsed" disabled="disabled" > VP9
                         </label>
                         <label for="useH264">
-                            <input type="radio" onclick="easyrtc.setRecordingVideoCodec('h264');" id="useH264" name="codecUsed"> H264
+                            <input type="radio" onclick="easyrtc.setRecordingVideoCodec('h264');" id="useH264" name="codecUsed" disabled="disabled"> H264
                         </label>
                         <br>
                         <button id="startRecording" disabled="disabled" onclick="startRecording();" >Start recording</button> 

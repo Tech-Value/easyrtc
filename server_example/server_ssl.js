@@ -8,7 +8,8 @@ var io      = require("socket.io"); // web socket external module
 // To use this server_example folder only without parent folder:
 // 1. you need to replace this "require("../");" by "require("easyrtc");"
 // 2. install easyrtc (npm i easyrtc --save) in server_example/package.json
-var easyrtc = require("..");   // EasyRTC internal module
+
+var easyrtc = require("../"); // EasyRTC internal module
 
 // Setup and configure Express http server. Expect a subfolder called "static" to be the web root.
 var httpApp = express();
@@ -59,4 +60,3 @@ var rtc = easyrtc.listen(httpApp, socketServer, null, function(err, rtcRef) {
         appObj.events.defaultListeners.roomCreate(appObj, creatorConnectionObj, roomName, roomOptions, callback);
     });
 });
-
