@@ -96,6 +96,10 @@ function convertListToButtons(roomName, occupants, isPrimary) {
         var statusDiv = document.createElement("div");
         statusDiv.className = "dragndropStatus";
 
+        var fileInput = document.createElement("input");
+        fileInput.className = "fileInput";
+        fileInput.type = "file";
+
         var dropArea = document.createElement("div");
         var connectButton = document.createElement("button");
         connectButton.appendChild(document.createTextNode("Connect"));
@@ -122,7 +126,10 @@ function convertListToButtons(roomName, occupants, isPrimary) {
 
         dropArea.id = buildDragNDropName(easyrtcid);
         dropArea.className = "dragndrop notConnected";
-        dropArea.innerHTML = "File drop area";
+        var dropAreaBox = document.createElement("p");
+        dropAreaBox.innerHTML = "Drop or choose file";
+        dropArea.appendChild(dropAreaBox);
+        dropArea.appendChild(fileInput);
 
 
         function updateStatusDiv(state) {
@@ -132,6 +139,7 @@ function convertListToButtons(roomName, occupants, isPrimary) {
                     break;
                 case "started_file":
                     statusDiv.innerHTML = "started file: " + state.name;
+                    break;
                 case "working":
                     statusDiv.innerHTML = state.name + ":" + state.position + "/" + state.size + "(" + state.numFiles + " files)";
                     break;
@@ -177,6 +185,10 @@ function convertListToButtons(roomName, occupants, isPrimary) {
             }
         }
         easyrtc_ft.buildDragNDropRegion(dropArea, filesHandler);
+        fileInput.addEventListener('change', function () {
+            filesHandler(fileInput.files);
+        });
+
         var container = document.createElement("div");
         container.appendChild(connectButton);
         container.appendChild(dropArea);

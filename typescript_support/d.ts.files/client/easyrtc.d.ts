@@ -807,7 +807,7 @@ declare class Easyrtc {
      * @example
      *     easyrtc.setSocketUrl(":8080", options);
      */
-    setSocketUrl(socketUrl:string, options:{
+    setSocketUrl(socketUrl:string, options?:{
         [key:string]:any;
     }):void;
 
@@ -1165,7 +1165,7 @@ declare class Easyrtc {
      */
     getSessionField(name:string):any;
 
-    
+
     /**
      * Returns true if the ipAddress parameter was the address of a turn server. This is done by checking against information
      * collected during peer to peer calls. Don't expect it to work before the first call, or to identify turn servers that aren't
