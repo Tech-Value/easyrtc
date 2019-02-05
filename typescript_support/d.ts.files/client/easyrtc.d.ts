@@ -842,9 +842,9 @@ declare class Easyrtc {
 
     /**
      * Set the authentication credential if needed.
-     * @param {Object} credentialParm - a JSONable object.
+     * @param {any} credentialParm - a JSONable object.
      */
-    setCredential(credentialParm:string):void;
+    setCredential(credentialParm: any):void;
 
     /**
      * Sets the listener for socket disconnection by external (to the API) reasons.
